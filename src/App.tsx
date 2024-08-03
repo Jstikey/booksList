@@ -2,7 +2,7 @@ import { Book } from "./book";
 import { Books } from "./books";
 import "./App.css";
 import { useState } from "react";
-
+import { FetchData } from "./tutorial";
 export interface appProps extends bookProps {
   seriel: number;
   handleShowBook: (book: bookProps) => void;
@@ -58,6 +58,7 @@ const BookList = () => {
               />
             ))}
           </div>
+          <FetchData />
         </div>
       </section>
     </main>
