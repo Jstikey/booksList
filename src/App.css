@@ -85,9 +85,13 @@ main {
   background: rgb(217, 222, 224);
   display: grid;
   align-items: center;
-  object-fit: cover;
   border: 1px solid rgb(88, 192, 233);
   padding: 2rem;
+  transition: transform 0.5s ease-in-out;
+  width: 280px;
+}
+.indiv:hover {
+  transform: scale(1.02);
 }
 
 .indiv img {
@@ -178,4 +182,43 @@ useEffect tutorial class
 .users a {
   color: var(--primary-500);
   text-transform: capitalize;
+}
+
+.form {
+  /* width: 30rem; */
+  background: whitesmoke;
+  border-radius: 1rem;
+  box-shadow: 0 5px 5px 5px blue;
+  /* padding: 2rem 2.5rem; */
+  margin: 3rem auto;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+}
+
+.btn {
+  width: 7rem;
+  background: blue;
+  margin-top: 1rem;
+  padding: 0.2rem 0;
+  color: rgb(157, 135, 135);
+  text-transform: capitalize;
+}
+
+.remove {
+  background: blue;
+  width: 5rem;
+}
+
+.tutorial {
+  margin-bottom: 10rem;
 }
