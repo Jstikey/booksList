@@ -185,11 +185,11 @@ useEffect tutorial class
 }
 
 .form {
-  /* width: 30rem; */
+  width: 30rem;
   background: whitesmoke;
   border-radius: 1rem;
   box-shadow: 0 5px 5px 5px blue;
-  /* padding: 2rem 2.5rem; */
+  padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
 
@@ -212,6 +212,7 @@ useEffect tutorial class
   padding: 0.2rem 0;
   color: rgb(157, 135, 135);
   text-transform: capitalize;
+  margin: 0.5rem;
 }
 
 .remove {
