@@ -1,37 +1,34 @@
+import { useState } from "react";
 import "./App.css";
-import { useCallback, useState } from "react";
-import List from "../src/listPerson";
+import { data } from "./data";
+import List from "./list";
 
-export interface person {
-  name: string;
+export interface personProps {
   id: number;
+  name: string;
+  age: number;
+  image: string;
+  dob: { day: number; month: number };
 }
 
-const data: person[] = [
-  { name: "joshua", id: 1 },
-  { name: "ruth", id: 2 },
-  { name: "shedy", id: 3 },
-  { name: "blessing", id: 4 },
-];
-
-//================= COMPONENT ===========================
-
-const App = () => {
-  const [people, setPeople] = useState(data);
-  const [count, setCount] = useState(0);
-
-  const removePerson = useCallback((id: number) => {
-    setPeople(people.filter((person) => person.id !== id));
-  }, []);
+function App() {
+  const [people, setPeople] = useState<personProps[]>(data);
+  const date = new Date();
+  const today = { day: date.getDate(), month: date.getMonth() - 1 };
+  const personBirthDay = people.filter(
+    (person) => person.dob.day === today.day && person.dob.month === today.month
+  );
 
   return (
-    <div className="form">
-      <button className="btn" onClick={() => setCount(count + 1)}>
-        count: {count}
-      </button>
-      <List people={people} removePerson={removePerson} />
-    </div>
-  );
-};
+    <main>
+      <section className="container">
+        <h3> {personBirthDay.length} birthdays today </h3>
 
+        <List people={people} />
+        <button onClick={() => setPeople([])}>clear all</button>
+      </section>
+      ()
+    </main>
+  );
+}
 export default App;
