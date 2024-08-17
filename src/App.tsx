@@ -1,18 +1,14 @@
 import "./App.css";
-import { Review } from "./review";
-
+import { Question } from "./Question";
 function App() {
   return (
-    <main>
-      <section className="container">
-        <div className="title">
-          <h2>Reviews</h2>
-          <div className="underline"></div>
-        </div>
-        <div>
-          <Review />
-        </div>
-      </section>
+    <main className="container">
+      <div style={{ paddingTop: "1rem" }}>
+        <h2 style={{ position: "sticky", top: "0", bottom: "0" }}>
+          Question and answer about login in
+        </h2>
+      </div>
+      <Question />
     </main>
   );
 }
